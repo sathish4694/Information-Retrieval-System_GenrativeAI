@@ -14,25 +14,25 @@ This Streamlit application allows users to upload PDF documents, ask questions a
 **Installation:**
 
 1. **Install required libraries:**
-''' Dependencies:
-streamlit
-langchain
-PyPDF2
-google-api-python-client
-faiss'''
+- Dependencies:
+- streamlit
+- langchain
+- PyPDF2
+- google-api-python-client
+- faiss
 
 2. **Setup:**
--Obtain necessary API keys/credentials:
--Google Cloud AI Platform credentials for accessing Google Generative AI.
--Configure the application with the required credentials.
+- Obtain necessary API keys/credentials:
+- Google Cloud AI Platform credentials for accessing Google Generative AI.
+- Configure the application with the required credentials.
 
-**3. Run the Application:**
+ 3. **Run the Application:**
 Execute the main script (e.g., streamlit run app.py).
 
-4. **Usage:**
--Upload PDF files within the Streamlit interface.
--Ask questions related to the content of the uploaded PDFs.
--Review the conversation history.
+ 4. **Usage:**
+- Upload PDF files within the Streamlit interface.
+- Ask questions related to the content of the uploaded PDFs.
+- Review the conversation history.
 
 5.**Testing Results:**
 ![image](https://github.com/user-attachments/assets/e97ed961-806a-4671-8d5b-92e9769318a9)
