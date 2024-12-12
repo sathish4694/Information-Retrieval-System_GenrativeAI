@@ -1,15 +1,12 @@
 import os
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.chat_models import ChatGooglePalm
 from langchain.embeddings.google_palm import GooglePalmEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from dotenv import load_dotenv
-
-
 
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")  
@@ -32,18 +29,6 @@ def get_vector_store(text_chunks):
     embeddings = GooglePalmEmbeddings(model="models/embedding-001")
     vector_store = FAISS.from_texts(text_chunks, embedding=embeddings)
     return vector_store
-
-# def get_conversational_chain(vector_store):
-#     llm=GooglePalm()
-#     memory = ConversationBufferMemory(memory_key = "chat_history", return_messages=True)
-#     conversation_chain = ConversationalRetrievalChain.from_llm(llm=llm, retriever=vector_store.as_retriever(), memory=memory)
-#     return conversation_chain
-
-# def get_conversational_chain(vector_store):
-#     llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key = GOOGLE_API_KEY)  # Using Gemini Pro
-#     memory = ConversationBufferMemory(memory_key = "chat_history", return_messages=True)
-#     conversation_chain = ConversationalRetrievalChain.from_llm(llm=llm, retriever=vector_store.as_retriever(), memory=memory)
-#     return conversation_chain
 
 def get_conversational_chain(vector_store):
     llm = ChatGooglePalm(google_api_key=GOOGLE_API_KEY, model="chat-bison-001")  # Gemini Chat model
