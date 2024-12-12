@@ -14,12 +14,16 @@ This Streamlit application allows users to upload PDF documents, ask questions a
 **Installation:**
 
 1. **Install required libraries:**
-- Dependencies:
+Dependencies:
 - streamlit
 - langchain
 - PyPDF2
-- google-api-python-client
-- faiss
+- python-dotenv
+- google-generativeai
+- langchain-community
+- langchain-google-genai
+- faiss-cpu
+- -e .
 
 2. **Setup:**
 - Obtain necessary API keys/credentials:
