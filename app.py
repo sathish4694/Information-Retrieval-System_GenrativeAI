@@ -86,5 +86,15 @@ def main():
     # Display "Developed by" with your name
     st.markdown("<div class='st-by1'>Developed by: Sathish Mattapalli</div>", unsafe_allow_html=True) 
 
+
 if __name__ == "__main__":
+    import os
+    import subprocess
+
+    # Get the port from the environment variable, default to 8080
+    port = int(os.environ.get("PORT", 8080))
+
+    # Ensure compatibility with deployment environments
+    script_path = os.path.abspath(__file__)
+    subprocess.run(["streamlit", "run", script_path, "--server.port", str(port)])
     main()

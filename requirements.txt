@@ -6,4 +6,3 @@ langchain-google-genai
 PyPDF2
 faiss-cpu
 streamlit
--e .
